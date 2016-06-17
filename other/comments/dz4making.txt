@@ -1,0 +1,2 @@
+php protected/t4.php /migrate/create --name=createCategories
+php protected/t4.php /migrate
