@@ -2,6 +2,7 @@
 
 namespace App\Components;
 
+use T4\Core\Exception;
 use T4\Core\Std;
 
 /**
@@ -17,7 +18,7 @@ class Login
     protected function validateEmail($val)
     {
         if (false === strpos($val, '@')) {
-            return false;
+            throw new Exception('Неверный email');
         }
         return true;
     }

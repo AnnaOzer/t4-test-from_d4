@@ -3,6 +3,7 @@
 namespace App\Controllers;
 
 use App\Components\Login;
+use T4\Core\Exception;
 use T4\Mvc\Controller;
 
 class Index
@@ -11,10 +12,14 @@ class Index
 
     public function actionDefault()
     {
-        $data = new Login();
-        $data->email = 'test.com';
-
-        var_dump($data->email);
+        try {
+            $data = new Login();
+            $data->email = 'test@test.com';
+            var_dump($data->email);
+        } catch (Exception $e) {
+            echo 'Error: ' . $e->getMessage();
+        }
+        
         die;
     }
 
