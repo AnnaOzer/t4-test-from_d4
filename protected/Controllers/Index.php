@@ -13,9 +13,14 @@ class Index
     public function actionDefault()
     {
         try {
+            
             $data = new Login();
             $data->email = 'test@test.com';
+            $data->name = 'Иван Иванов';
+            $data->age = 42;
+            
             var_dump($data->email);
+            
         } catch (Exception $e) {
             echo 'Error: ' . $e->getMessage();
         }
