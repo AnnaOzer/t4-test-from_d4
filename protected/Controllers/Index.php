@@ -12,7 +12,7 @@ class Index
     public function actionDefault()
     {
         $data = new Login();
-        $data->email = 'test@test.com';
+        $data->email = 'test.com';
 
         var_dump($data->email);
         die;
