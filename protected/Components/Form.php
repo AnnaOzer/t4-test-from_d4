@@ -25,10 +25,10 @@ class Form
 
     protected function validatePassword($val) {
         if (strlen($val)<=3) {
-            throw new Exception('Слишком короткий пароль');
+            yield new Exception('Слишком короткий пароль');
         }
         if (!preg_match('~[a-z0-9]~i', $val)) {
-            throw new Exception('Неверные символы в пароле');
+            yield new Exception('Неверные символы в пароле');
         }
     }
 /*

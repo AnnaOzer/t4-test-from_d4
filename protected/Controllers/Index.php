@@ -27,7 +27,7 @@ class Index
             $this->data->errors = $e;
 
             foreach ($e as $error)  {
-                echo $error->getMessage(); // Неверный emailСлишком короткий пароль
+                echo $error->getMessage(); // Неверный emailСлишком короткий парольНеверные символы в пароле
             }
 
             unset($e[0]);
