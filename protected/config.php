@@ -11,5 +11,9 @@ return [
         ]
     ],
     'name' => 'Тест фреймворка',
-    'extensions' => ['bootstrap' => ['theme' => 'cosmo'] ]
+    'extensions' => ['bootstrap' => ['theme' => 'cosmo'] ],
+
+    'errors' => [
+        404 => '//Errors/404'
+    ]
 ];
