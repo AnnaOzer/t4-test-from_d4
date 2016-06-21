@@ -21,6 +21,8 @@ class Index
             
         } catch (MultiException $e) {
 
+            $this->data->errors = $e;
+
             foreach ($e as $error)  {
                 echo $error->getMessage();  // Неверный emailНеверный телефон
             }
