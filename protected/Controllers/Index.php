@@ -14,7 +14,8 @@ class Index
 
     public function actionDefault($form = null)
     {
-        echo $this->app->assets->publish('/Layouts/assets'); // /Assets/1189d598435a
+        $this->app->assets->publish('/Layouts/assets');
+        $this->app->assets->publish('/Layouts/assets/test.css');
         die;
 
     }
