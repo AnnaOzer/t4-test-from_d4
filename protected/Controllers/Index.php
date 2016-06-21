@@ -12,31 +12,9 @@ class Index
     extends Controller
 {
 
-    public function actionDefault()
+    public function actionDefault($form = null)
     {
-        try {
-            
-            $form = new Form();
-            $form->fill([
-                'email' => '123',
-                'password' => 'й'
-            ]);
-            
-        } catch (MultiException $e) {
-
-            $this->data->errors = $e;
-
-            foreach ($e as $error)  {
-                echo $error->getMessage(); // Неверный emailСлишком короткий парольНеверные символы в пароле
-            }
-
-            unset($e[0]);
-            throw $e;
-        }
-
-
-
-        die;
+        $this->data->form = $form;
     }
 
 }

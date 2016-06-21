@@ -1,6 +1,26 @@
 {% extends 'Index.html' %}
 
 {% block content %}
-    <h1>Hello, world!</h1>
-    <h2>It's T4 framework!</h2>
+
+    <div class="container">
+        <h4>Регистрация</h4>
+        <form action="/" method="post" class="form-horizontal">
+            <div class="form-group">
+                <div class="col-sm-3">
+                    Логин:
+                </div>
+                <div class="col-sm-9">
+                    <input type="text" name="form[login]" class="form-control" value="{{ form.login }}">
+                </div>
+
+                <div class="col-sm-3">
+                    Email:
+                </div>
+                <div class="col-sm-9">
+                    <input type="text" name="form[email]" class="form-control" value="{{ form.email }}">
+                </div>
+            </div>
+            <input type="submit" class="btn btn-success">
+        </form>
+    </div>
 {% endblock %}
