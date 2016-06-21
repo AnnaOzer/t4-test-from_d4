@@ -3,7 +3,9 @@
 namespace App\Controllers;
 
 use App\Components\Form;
+use App\Components\Test;
 use T4\Core\Exception;
+use T4\Core\MultiException;
 use T4\Mvc\Controller;
 
 class Index
@@ -14,14 +16,13 @@ class Index
     {
         try {
             
-            $data = new Form();
-            $data->email = 'test@test.com';
-            $data->phone = '+7 910 123-45-67';
+            $foo = new Test();
             
-            var_dump($data->phone); // string(11) "79101234567"
-            
-        } catch (Exception $e) {
-            echo 'Error: ' . $e->getMessage();
+        } catch (MultiException $e) {
+
+            foreach ($e as $error)  {
+                echo $error->getMessage(); // Первая ошибкаВторая ошибка
+            }
         }
         
         die;
