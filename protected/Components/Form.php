@@ -23,6 +23,15 @@ class Form
         return true;
     }
 
+    protected function validatePassword($val) {
+        if (strlen($val)<=3) {
+            throw new Exception('Слишком короткий пароль');
+        }
+        if (!preg_match('~[a-z0-9]~i', $val)) {
+            throw new Exception('Неверные символы в пароле');
+        }
+    }
+/*
     protected function validatePhone($val)
     {
         if (!preg_match('~\D{11}~', $val)) {
@@ -31,7 +40,7 @@ class Form
 
         return true;
     }
-
+*/
     protected function sanitizePhone($val)
     {
         return preg_replace('~\D+~', '', $val);

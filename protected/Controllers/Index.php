@@ -17,14 +17,17 @@ class Index
         try {
             
             $form = new Form();
-            $form->fill([$this->app->request->post]);
+            $form->fill([
+                'email' => '123',
+                'password' => 'й'
+            ]);
             
         } catch (MultiException $e) {
 
             $this->data->errors = $e;
 
             foreach ($e as $error)  {
-                echo $error->getMessage();  // Неверный emailНеверный телефон
+                echo $error->getMessage(); // Неверный emailСлишком короткий пароль
             }
 
             unset($e[0]);
