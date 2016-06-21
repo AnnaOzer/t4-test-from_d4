@@ -30,6 +30,7 @@ class Form
         if (!preg_match('~[a-z0-9]~i', $val)) {
             yield new Exception('Неверные символы в пароле');
         }
+        return true;
     }
 /*
     protected function validatePhone($val)
