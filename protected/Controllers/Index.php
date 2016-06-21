@@ -23,8 +23,13 @@ class Index
             foreach ($e as $error)  {
                 echo $error->getMessage(); // Первая ошибкаВторая ошибка
             }
+
+            unset($e[0]);
+            throw $e;
         }
-        
+
+
+
         die;
     }
 
