@@ -16,12 +16,16 @@ class Index
     {
         try {
             
-            $foo = new Test();
+            $form = new Form();
+            $form->fill([
+                'email' => '123',
+                'phone' => 'qwerty'
+            ]);
             
         } catch (MultiException $e) {
 
             foreach ($e as $error)  {
-                echo $error->getMessage(); // Первая ошибкаВторая ошибка
+                echo $error->getMessage();  // Неверный emailНеверный телефон
             }
 
             unset($e[0]);

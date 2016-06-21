@@ -23,6 +23,15 @@ class Form
         return true;
     }
 
+    protected function validatePhone($val)
+    {
+        if (!preg_match('~\D{11}~', $val)) {
+            throw new Exception('Неверный телефон');
+        }
+
+        return true;
+    }
+
     protected function sanitizePhone($val)
     {
         return preg_replace('~\D+~', '', $val);
