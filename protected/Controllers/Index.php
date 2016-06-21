@@ -15,7 +15,7 @@ class Index
     public function actionDefault($form = null)
     {
         $this->app->assets->publish('/Layouts/assets');
-        $this->app->assets->publish('/Layouts/assets/test.css');
+        $this->app->assets->publishCssFile('/Layouts/assets/test.css');
         die;
 
     }
