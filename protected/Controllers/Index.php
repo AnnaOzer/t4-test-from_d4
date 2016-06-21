@@ -14,8 +14,9 @@ class Index
 
     public function actionDefault($form = null)
     {
-        $this->data->items = [12, 85];
-        
+        echo $this->app->assets->publish('/Layouts/assets'); // /Assets/1189d598435a
+        die;
+
     }
 
 }
