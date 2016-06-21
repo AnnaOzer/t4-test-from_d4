@@ -14,9 +14,8 @@ class Index
 
     public function actionDefault($form = null)
     {
-        $this->view->addTemplatePath('//tmp/');
-        echo  $this->view->render('test.html');
-        die;
+        $this->data->items = [12, 85];
+        
     }
 
 }

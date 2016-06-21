@@ -3,32 +3,9 @@
 {% block content %}
 
     <div class="container">
-
-        <h4>Регистрация</h4>
-
-        {% for error in errors %}
-        <div class="alert alert-danger">
-            {{ error.message }}
-        </div>
+        {% for item in items %}
+            <li>{{ item }}</li>
         {% endfor %}
-
-        <form action="/" method="post" class="form-horizontal">
-            <div class="form-group">
-                <div class="col-sm-3">
-                    Логин:
-                </div>
-                <div class="col-sm-9">
-                    <input type="text" name="form[login]" class="form-control" value="{{ form.login }}">
-                </div>
-
-                <div class="col-sm-3">
-                    Email:
-                </div>
-                <div class="col-sm-9">
-                    <input type="text" name="form[email]" class="form-control" value="{{ form.email }}">
-                </div>
-            </div>
-            <input type="submit" class="btn btn-success">
-        </form>
     </div>
+
 {% endblock %}
