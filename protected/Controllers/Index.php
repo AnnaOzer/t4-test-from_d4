@@ -17,10 +17,7 @@ class Index
         try {
             
             $form = new Form();
-            $form->fill([
-                'email' => '123',
-                'phone' => 'qwerty'
-            ]);
+            $form->fill([$this->app->request->post]);
             
         } catch (MultiException $e) {
 
