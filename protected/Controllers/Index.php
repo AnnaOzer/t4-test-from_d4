@@ -14,21 +14,9 @@ class Index
 
     public function actionDefault($form = null)
     {
-        try {
-            $data = new Form();
-            $data->fill($form);
-
-            // $data->save();
-            
-            echo 'Данные ОК';
-            die;
-
-        } catch (MultiException $errors) {
-
-            $this->data->errors = $errors;
-        }
-
-        $this->data->form = $form;
+        $this->view->addTemplatePath('//tmp/');
+        echo  $this->view->render('test.html');
+        die;
     }
 
 }
