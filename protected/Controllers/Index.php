@@ -16,7 +16,7 @@ class Index
     {
         $this->app->assets->publish('/Layouts/assets');
         $this->app->assets->publishCssFile('/Layouts/assets/test.css');
-        die;
+     
 
     }
 

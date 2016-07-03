@@ -11,6 +11,7 @@ return [
         ]
     ],
     'name' => 'Тест фреймворка',
+    
     'extensions' => ['bootstrap' => ['theme' => 'cosmo'] ],
 
     'errors' => [
