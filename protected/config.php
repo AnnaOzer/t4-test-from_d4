@@ -12,7 +12,13 @@ return [
     ],
     'name' => 'Тест фреймворка',
 
-    'extensions' => ['bootstrap' => ['theme' => 'darkly'] ],
+    'extensions' => [
+        'jquery' => [],
+        'bootstrap' => ['theme' => 'darkly'],
+        'ckeditor' => [
+            'location' => 'local',
+        ],
+    ],
 
     'errors' => [
         404 => '//Errors/404'
