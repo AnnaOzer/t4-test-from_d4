@@ -21,7 +21,7 @@ class m_0000000001_CreateWebApp
 
         $adminId = $this->insert('__users', [
             'email' => 'admin@t4.local',
-            'password' => '---'
+            'password' => '$2y$10$7o9OO3rAMfJSk1lnQrG2PeRTVli6O46w81d7Or2s516tJQYI5xkou'
         ]);
 
         $this->createTable('__user_roles', [

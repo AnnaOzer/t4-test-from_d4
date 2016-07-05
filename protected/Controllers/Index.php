@@ -12,9 +12,10 @@ class Index
     extends Controller
 {
 
-    public function actionDefault($form = null)
+    public function actionDefault()
     {
-        
+        echo password_hash(123456, PASSWORD_DEFAULT);
+        die;
     }
 
 }
