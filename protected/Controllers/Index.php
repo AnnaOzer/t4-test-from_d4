@@ -13,6 +13,12 @@ class Index
     extends Controller
 {
 
+    protected function access($action, $params=[])
+    {
+        var_dump( $this->app->user ); // NULL
+        return true;
+    }
+
     public function actionDefault()
     {
         /*echo password_hash(123456, PASSWORD_DEFAULT);
