@@ -28,20 +28,20 @@ class m_0000000001_CreateWebApp
             'name' => ['type' => 'string'],
             'title' => ['type' => 'string'],
         ], [
-            'type' => 'unique', 'columns' => ['name']
+            ['type' => 'unique', 'columns' => ['name']]
         ]);
 
         $adminRoleId = $this->insert('__user_roles', [
             'name' => 'admin',
-            'title' => 'Администратор',
+            'title' => 'Администратор'
         ]);
 
-        $this->createTable('__user_roles_to_users', [
+        $this->createTable('__user_roles_to__users', [
            '__user_id' => ['type' => 'link'],
            '__role_id' => ['type' => 'link']
         ]);
 
-        $this->insert('__user_roles_to_users', [
+        $this->insert('__user_roles_to__users', [
             '__user_id' => $adminId,
             '__role_id' => $adminRoleId,
         ]);
@@ -58,6 +58,9 @@ class m_0000000001_CreateWebApp
 
     public function down()
     {
-
+        $this->dropTable('__user_sessions');
+        $this->dropTable('__user_roles_to__users');
+        $this->dropTable('__user_roles');
+        $this->dropTable('__users');
     }
 }
