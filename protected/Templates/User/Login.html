@@ -2,7 +2,13 @@
 
 {% block content %}
 
-<form class="form-horizontal" action="/admin/login" method="post">
+{% for error in errors %}
+<div class="alert alert-danger">
+    {{ error.getMessage() }}
+</div>
+{% endfor %}
+
+<form class="form-horizontal" action="/user/login.html" method="post">
 
     <div class="form-group">
         <label for="login[email]" class="col-sm-4 control-label">
