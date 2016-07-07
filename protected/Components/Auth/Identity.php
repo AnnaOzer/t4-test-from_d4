@@ -28,6 +28,17 @@ class Identity
             $errors->add(new Exception('Такой email в базе не найден'));
             throw $errors;
         }
+
+        // здесь мы точно знаем что такой пользователь у нас в базе есть
+        // и надо проверить пароль
+
+        if (!password_verify($data->password, $user->password)) {
+            $errors->add(new Exception('Неверный пароль'));
+            throw $errors;
+        };
+
+        echo 'SUCCESS!';
+        die;
     }
 
     public function getUser()
