@@ -21,6 +21,13 @@ class Identity
         if(!$errors->isEmpty()) {
             throw $errors;
         }
+
+        $user = User::findByEmail($data->email);
+
+        if (empty($user)) {
+            $errors->add(new Exception('Такой email в базе не найден'));
+            throw $errors;
+        }
     }
 
     public function getUser()
