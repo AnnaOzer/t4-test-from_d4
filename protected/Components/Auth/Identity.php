@@ -3,6 +3,8 @@
 namespace App\Components\Auth;
 
 use App\Models\User;
+use App\Models\UserSession;
+use T4\Http\Helpers;
 
 class Identity
 {
@@ -37,7 +39,16 @@ class Identity
             throw $errors;
         };
 
-        echo 'SUCCESS!';
+        // в этот момент мы точно знаем, что пользователь у нас зашел
+        // создадим длинный и случайный хеш
+
+        $hash = sha1(microtime() . mt_rand());
+        $session = new UserSession();
+        $session->hash = $hash;
+        $session->user = $user;
+        $session->save();
+
+        Helpers::setCookie('t4auth', $hash, time()+ 30*24*60*60);
         die;
     }
 
