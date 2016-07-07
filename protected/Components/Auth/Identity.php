@@ -49,11 +49,20 @@ class Identity
         $session->save();
 
         Helpers::setCookie('t4auth', $hash, time()+ 30*24*60*60);
-        die;
+
     }
 
     public function getUser()
     {
-        return User::findByPK(1);
+        if (Helpers::issetCookie('t4auth')) {
+
+            if(!empty($hash = Helpers::getCookie('t4auth'))) {
+                if(!empty($session = UserSession::findByHash($hash))) {
+                    return $session->user;
+                }
+            }
+        }
+
+        return null;
     }
 }
