@@ -52,6 +52,20 @@ class Identity
 
     }
 
+    public function logout()
+    {
+        if (Helpers::issetCookie('t4auth')) {
+
+            if(!empty($hash = Helpers::getCookie('t4auth'))) {
+                Helpers::unsetCookie('t4auth');
+                $session = UserSession::findByHash($hash);
+                if (!empty($session)) {
+                    $session->delete();
+                }
+            }
+        }
+    }
+
     public function getUser()
     {
         if (Helpers::issetCookie('t4auth')) {

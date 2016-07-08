@@ -31,4 +31,11 @@ class User
 
         }
     }
+
+    public function actionLogout()
+    {
+        $auth = new Identity();
+        $auth->logout();
+        $this->redirect('/');
+    }
 }

@@ -10,6 +10,8 @@
   <div class="alert alert-info">
     {% if app.user %}
     Добро пожаловать, {{ app.user.firstName }}!
+    <br>
+    <a href="/user/logout.html">Выход</a>
     {% else %}
     <a href="/user/login.html">Вход</a>
     {% endif %}
