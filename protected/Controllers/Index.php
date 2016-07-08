@@ -15,18 +15,12 @@ class Index
 
     protected function access($action, $params=[])
     {
-        var_dump( $this->app->user ); // теперь пользователь выводится
-        // ["email"]=> string(14) "admin@t4.local" ["password"]=> string(60) "$2y$10$7o9OO3rAMfJSk1lnQrG2PeRTVli6O46w81d7Or2s516tJQYI5xkou"
         return true;
     }
 
     public function actionDefault()
     {
-        /*echo password_hash(123456, PASSWORD_DEFAULT);
-        die;
-        */
-        var_dump( User::findAll() );
-        die;
+
     }
 
 }
