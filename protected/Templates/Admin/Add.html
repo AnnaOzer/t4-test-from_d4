@@ -1,0 +1,27 @@
+{% extends 'Index.html' %}
+
+{% block content %}
+
+<form action ="/admin/save" method="post">
+    <div class="col-xs-4">
+        Имя:
+    </div>
+    <div class="col-xs-8">
+        <input type="text" name="person[firstName]">
+    </div>
+    <div class="col-xs-4">
+        Фамилия:
+    </div>
+    <div class="col-xs-8">
+        <input type="text" name="person[lastName]">
+    </div>
+    <div class="col-xs-4">
+        Возраст:
+    </div>
+    <div class="col-xs-8">
+        <input type="number" name="person[age]">
+    </div>
+    <input type="submit" class="btn btn-success">
+</form>
+
+{% endblock %}

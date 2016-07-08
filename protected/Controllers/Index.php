@@ -13,11 +13,6 @@ class Index
     extends Controller
 {
 
-    protected function access($action, $params=[])
-    {
-        return true;
-    }
-
     public function actionDefault()
     {
 

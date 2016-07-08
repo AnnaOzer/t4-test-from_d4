@@ -1,0 +1,28 @@
+{% extends 'Index.html' %}
+
+{% block content %}
+
+<a href="/admin/add/" class="btn btn-success">
+    Добавить
+</a>
+
+<table class="table table-striped">
+    <tr>
+        <th>Имя</th>
+        <th>Фамилия</th>
+        <th>Возраст</th>
+        <th></th>
+    </tr>
+
+    {% for item in items %}
+    <tr>
+        <td>{{ item.firstName }}</td>
+        <td>{{ item.lastName }}</td>
+        <td>{{ item.age }}</td>
+        <td>
+            <a href="/admin/delete?id={{ item.Pk }}" class="btn btn-danger">Удалить</a>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}
